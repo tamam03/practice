@@ -11,7 +11,13 @@ class ApplicationController < ActionController::Base
       about_path
   end
 
-  #上記のような記述をすることで、初期設定を上書きs
+  #上記のような記述をすることで、初期設定を上書き
+
+  def after_sign_out_path_for(resource)
+    about_path
+  end
+
+  # サインアウト後Aboutページへ遷移
 
 
 # protectedは呼び出された他のコントローラからも参照することができます。
