@@ -3,6 +3,17 @@ class ApplicationController < ActionController::Base
 # devise利用の機能（ユーザ登録、ログイン認証など）が使われる前に
 # configure_permitted_parametersメソッドが実行されます。
    before_action :configure_permitted_parameters, if: :devise_controller?
+# サインインできたらaboutページ遷移
+# after_sign_in_path_forはDeviseが用意しているメソッドで、サインイン後にどこに遷移するかを設定しているメソッドです。
+  # after_sign_in_path_forは、Deviseの初期設定ではroot_path
+
+  def after_sign_in_path_for(resource)
+      about_path
+  end
+
+  #上記のような記述をすることで、初期設定を上書きs
+
+
 # protectedは呼び出された他のコントローラからも参照することができます。
   protected
 # configure_permitted_parametersメソッドでは、devise_parameter_sanitizer.permitメソッドを使うことで
