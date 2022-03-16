@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # after_sign_in_path_forは、Deviseの初期設定ではroot_path
 
   def after_sign_in_path_for(resource)
-      about_path
+      post_images_path
   end
 
   #上記のような記述をすることで、初期設定を上書き

@@ -13,7 +13,10 @@
  <body>
   <header>
     <% if user_signed_in? %>
-       <!--devise 側で用意しているヘルパーメソッド-->-->
+    <li>
+    <%= link_to '投稿フォーム', new_post_image_path %>
+   </li>
+       <!--devise 側で用意しているヘルパーメソッド-->
        <!--ログイン済みならば true が、ログインしていなければ false -->
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
