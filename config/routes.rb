@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # devise を使用する際に URL として users を含む
   devise_for :users
 
-  resources :post_images, only: [:new, :create, :index, :show]
+  resources :post_images, only: [:new, :create, :index, :show, :destroy
+  ]
 
 
   # メソッド'URL' => 'こんとろーる＃あくしょん'，as:'名前付きルート'
