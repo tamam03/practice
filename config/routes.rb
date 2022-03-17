@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   # devise を使用する際に URL として users を含む
   devise_for :users
 
-  resources :post_images, only: [:new, :create, :index, :show, :destroy
-  ]
+  resources :post_images, only: [:new, :create, :index, :show, :destroy]do
+   # コメントは、投稿画像に対してコメントされます。このため、post_commentsは、post_imagesに結びつきます。
+  resources :post_comments, only: [:create]
+end
 
   resources :users, only: [:show, :edit, :update]
+
+
 
 
   # メソッド'URL' => 'こんとろーる＃あくしょん'，as:'名前付きルート'
