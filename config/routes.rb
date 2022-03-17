@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :post_images, only: [:new, :create, :index, :show, :destroy]do
    # コメントは、投稿画像に対してコメントされます。このため、post_commentsは、post_imagesに結びつきます。
-  resources :post_comments, only: [:create]
+  resources :post_comments, only: [:create, :destroy]
 end
 
   resources :users, only: [:show, :edit, :update]
